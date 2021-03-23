@@ -1,6 +1,7 @@
 Options +FollowSymLinks
 Options -Indexes
 RewriteEngine on
+RewriteBase /
 # Enable Access Apache Status
 RewriteCond %{REQUEST_URI} !=/server-status
 RewriteCond %{REQUEST_FILENAME} !-f
