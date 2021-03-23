@@ -1,0 +1,27 @@
+version: "3.8"
+services: 
+  app:
+    container_name: "ppkm"
+    image: "hanifmuhammad/frameduz-php:7.4-apache"
+    ports: 
+      - 9001:80
+    volumes: 
+      - .:/var/www/html
+    environment: 
+      MYSQL_HOST: "mysql.server"
+      MYSQL_PORT: "3306" #default port mysql
+      MYSQL_USER: "root"
+      MYSQL_PASS: "root"
+      MYSQL_DBNAME: "dbweb_ppkm"
+    networks: 
+      - localnetwork
+      - localsite
+
+networks: 
+  localnetwork:
+    name: "localnetwork"
+    driver: "bridge"
+  localsite:
+    name: "localsite"
+    external: true
+
